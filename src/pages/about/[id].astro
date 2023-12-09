@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [{ params: { id: "1" } }, { params: { id: "2" } }];
+}
+const { id } = Astro.params;
+---
+
+<Layout title={`About ${id}`}>
+  <a href="/">Home page</a>
+  <h1>About: {id}</h1>
+</Layout>
+
+<style>
+  h1,
+  a {
+    color: white;
+  }
+</style>
